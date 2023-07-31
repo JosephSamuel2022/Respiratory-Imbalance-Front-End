@@ -64,7 +64,7 @@ function Register() {
 
 			try {
 				const response = await axios.post(
-					"http://localhost:5000/api/signup",
+					"https://respiratory-backend.onrender.com/api/signup",
 					data
 				);
 				const html = response.data;
