@@ -1,0 +1,125 @@
+.report-container {
+	display: flex;
+
+	flex-direction: column;
+	border: 2px solid #000;
+	padding: 20px;
+	margin-top: 50px;
+	margin-left: 50px;
+	margin-right: 50px;
+	margin-bottom: 50px;
+}
+
+.report-heading {
+	font-size: 44px;
+	margin-bottom: 20px;
+	text-align: center;
+}
+
+.report-image-container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	align-items: center;
+	margin-top: 20px;
+}
+
+.report-image {
+	width: 100%; /* Adjust the width as needed */
+	max-width: 600px; /* Set a maximum width */
+	height: auto;
+	margin: 10px;
+}
+
+.result-container {
+	text-align: center;
+	margin-top: 30px;
+}
+
+.result-heading {
+	font-size: 50px;
+}
+
+.result-text {
+	font-size: 100px;
+	font-weight: bold;
+}
+
+/* Color styles based on result */
+.result-chronic {
+	color: red;
+}
+
+.result-normal {
+	color: lightgreen;
+}
+
+.result-mild {
+	color: yellow;
+}
+
+.result-severe {
+	color: orange;
+}
+
+.patient-details-container {
+	font-weight: bold; /* Make the text bold */
+	font-size: 18px; /* Increase the text size */
+	/* Add some bottom margin for spacing */
+}
+
+.idetails {
+	font-size: 18px;
+}
+
+.patient-details-container p {
+	margin: 5px 0;
+	font-size: 20px; /* Increased text size */
+	color: #333;
+}
+
+.patient-details-container p strong {
+	font-weight: bold; /* Make the headings bold */
+	margin-right: 10px; /* Add some right margin to separate heading from value */
+}
+
+.print-button-container {
+	display: flex;
+	justify-content: flex-end;
+	margin-bottom: 20px;
+}
+
+.print-button {
+	display: flex;
+	align-items: center;
+	padding: 8px 16px;
+	background-color: #007bff;
+	color: #ffffff;
+	font-weight: bold;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+}
+
+.print-icon {
+	margin-right: 8px;
+}
+
+@media print {
+	.print-button-container {
+		display: none;
+	}
+
+	/* Remove the tab name (website name) from the printed page */
+	@page {
+		size: auto; /* Set the size of the printed page */
+		margin: 0mm; /* Set the margins of the printed page */
+		border: 2px solid #000; /* Add a border to each page */
+	}
+
+	/* Hide any additional elements from the printed page */
+	/* For example, you can use the .hide-on-print class to hide elements */
+	.hide-on-print {
+		display: none;
+	}
+}
