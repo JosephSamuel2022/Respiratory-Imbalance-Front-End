@@ -19,6 +19,7 @@ import "./App.css";
 
 function Login() {
 	const navigate = useNavigate();
+	const [patientError, setPatientError] = useState(false);
 	function handleSwitchToRegister() {
 		navigate("/register");
 	}
@@ -33,6 +34,7 @@ function Login() {
 		};
 
 		try {
+			setPatientError(false);
 			const response = await axios.post(
 				"https://respiratory-backend.onrender.com/api/login",
 				data
@@ -47,6 +49,8 @@ function Login() {
 				// Navigate to the PredictForm component
 				sessionStorage.setItem("patientId", pid);
 				navigate("/predict");
+			} else {
+				setPatientError(true);
 			}
 		} catch (error) {
 			console.error("Error:", error);
@@ -99,9 +103,11 @@ function Login() {
 								onChange={handlePasswordChange}
 							/>
 						</div>
-
+						{patientError && (
+							<div className='error-text'>Invalid Patient Id or Password</div>
+						)}
 						<MDBBtn
-							className='mb-4'
+							className='mb-4 mt-2'
 							size='lg'
 							onClick={handleLogin}
 							disabled={!pid || !password}>

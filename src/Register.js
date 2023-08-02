@@ -63,6 +63,7 @@ function Register() {
 			};
 
 			try {
+				setPatientError(false);
 				const response = await axios.post(
 					"https://respiratory-backend.onrender.com/api/signup",
 					data
